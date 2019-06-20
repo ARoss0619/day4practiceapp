@@ -10,10 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var compoundPic: UIImageView!
+    @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var incorrectLabel: UILabel!
+    @IBOutlet weak var correctLabel: UILabel!
+    @IBOutlet weak var answerBox: UITextField!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        incorrectLabel.isHidden = true
+        correctLabel.isHidden = true
+        answerBox.isEnabled = true
+        question.isEnabled = true
+        compoundPic.isHidden = true
+        
     }
+    
+    @IBAction func submitButton(_ sender: UIButton) {
+        incorrectLabel.isHidden = true
+        if answerBox.text == "Sodium Hydroxide"{
+            correctLabel.isHidden = false
+            compoundPic.isHidden = false
+            
+        }
+        else {
+            incorrectLabel.isHidden = false
+        }
+    }
+    
 
 
 }
